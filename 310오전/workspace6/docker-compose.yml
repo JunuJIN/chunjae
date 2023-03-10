@@ -1,0 +1,19 @@
+version: '3'
+services:
+  ds:
+    image: project-ds
+    build: workspace5/Dockerfile
+    container_name: ds
+    ports:
+      - "8890:8890"
+    volumes:
+      - .:/app/project-ds
+
+  engineer:
+    image: project-engineer
+    build: workspace6/Dockerfile
+    container_name: engineer
+    ports:
+      - "8899:8899"
+    volumes:
+      - .:/app/project-engineer
